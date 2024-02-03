@@ -21,3 +21,19 @@ I am going to create branches in accordance to how it was with my previous job a
 4. Postgres
 
 More to come from different branches.
+
+## RHSC-1_todo_model_back_end_work
+1. Installed gems RSpec gems.
+2. Accidentally installed bootstrap already (was going to do it on another branch)
+3. Created Todo model, ensuring theres validation for field title during creation and update.
+4. Created Todo controller via api/v1 to ensure that is returning in JSON format on CRUD actions and utilizing it as an API.
+5. Inputted some seeds to pre-populate the tasks towards our todo list that Roaming Hunger has given us.
+6. Implemented some RSpec testing for model and controller.
+7. Installed Rubocop to ensure there are no bugs/errors, for better codebase.
+
+## To boot up the server
+1. bundle install
+2. rails db:create
+3. rails db:migrate
+4. rails db:seed (optional)
+5. bin/dev
