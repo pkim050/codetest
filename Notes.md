@@ -37,3 +37,19 @@ More to come from different branches.
 3. rails db:migrate
 4. rails db:seed (optional)
 5. bin/dev
+
+## Notes
+Whoops, I accidentally opened a PR in the codetest repository instead of my own repository, went ahead and closed it out.
+
+## RHSC-1_todo_front_end
+# First commit
+1. Installed React, React Dom, and React Router Dom packages.
+2. Started up components.
+3. Installed more packages such as fontawesome for to utilize their free icons, uuid, and immutability-helper for post calls on API.
+4. Able to show React elements/componenets in the home page.
+5. Todo Title is rendered.
+6. There is a divider between the list of todos and the title.
+7. All existing todos are showing up along with checkbox, edit icon, and delete icon.
+8. All aligned in the middle, giving out a clean and simple border of each todos.
+9. Created a function Todos to output all existing todos.
+10. Checkboxes do nothing for now.
