@@ -24,17 +24,17 @@ Create an application to create, view, update, and destroy ‘todo’ items. The
 
 ### The default UI should show a list of TODO items, each item needs
 * [X] A text description of the todo
-* [ ] A checkbox to mark the todo as done or undone
+* [X] A checkbox to mark the todo as done or undone
 
 ### Interactions
 * [X] The user should be able to create a new TODO item
 * [X] The user should be able to destroy a TODO item
-* [ ] The user should be able to update the text description of a TODO item
+* [X] The user should be able to update the text description of a TODO item
 
 ## Backend Requirements
 
 ### Interactions to support
-* [ ] TODOs should be Created, Updated, Listed, Viewed, and Destroyed via REST or graphQL
+* [X] TODOs should be Created, Updated, Listed, Viewed, and Destroyed via REST or graphQL
 * [X] TODOs should be stored in your database on the backend. 
 
 ## Extra Credit
@@ -42,7 +42,10 @@ Create an application to create, view, update, and destroy ‘todo’ items. The
 If you find that you have completed the earlier items with time to spare, please consider adding the following
 
 ### Suggestions for improvements
-* [ ] Deploy your TODO app to the internet so we can see it in action
-* [ ] Test it on Mobile device sizes.
-* [ ] Write unit tests for your code.
-* [ ] Edit this ReadMe with new suggestions for how to improve this code test
+* [X] Deploy your TODO app to the internet so we can see it in action (More info on the link below)
+* [X] Test it on Mobile device sizes. (I didn't really "test" it, only briefly looked at it via inspect and looking at every mobile options, looks fine though.)
+* [X] Write unit tests for your code.
+* [X] Edit this ReadMe with new suggestions for how to improve this code test (Link below)
+
+### Hello
+Please look at [a link](https://github.com/pkim050/codetest/blob/main/Notes.md) For notes and such!
