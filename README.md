@@ -18,7 +18,7 @@ Create an application to create, view, update, and destroy ‘todo’ items. The
 * [X] Commit early and often. We'll likely be following along with your progress.
 
 ### Upon completion, please email to us:
-* [ ] A link to your repository with code in it.
+* [X] A link to your repository with code in it.
 
 ## Front End Requirements
 
