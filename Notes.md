@@ -1,12 +1,12 @@
 # Create TODO list design
 There are many different ways of how a TODO list looks. The best checklist I have seen recently is what JIRA has. Jira has their own todo list in a story or ticket and it is really simple and clean. It lets the user create todo items, edit items, delete items, and be able to 'finish' them by clicking on the checkbox which crosses out the item. I utilized it a lot with my previous company and it helps the team be on the same page as me throughout the sprint.
 
-![Design Example](https://gyazo.com/34e95fd8786cb6ffba88e8dbbf2f5b1d)
+![a link](https://i.gyazo.com/34e95fd8786cb6ffba88e8dbbf2f5b1d.png)
 
 I won't exactly replicate it how it is shown in the screenshot (such as the status of 'Open', 'In Progress', 'Done' and certain icons that are shown) but it will be something similar to it.
 
 ## Think of ways to create the TODO List application
-1. Creating an API for back-end using Rails 7 and Postgres as database. Create a React application for front-end utilizing the API application. Bootstrap for styling purposes. 2 total applications. I have done this in the past, here is the API url: https://github.com/pkim050/nba-list-api. Here is the react app url: https://github.com/pkim050/nba-list. And here is the demo of the application: https://www.youtube.com/watch?v=K8eDpUrGatA&feature=youtu.be. It is kind of similar to Matt's Wrestling Cards.
+1. Creating an API for back-end using Rails 7 and Postgres as database. Create a React application for front-end utilizing the API application. Bootstrap for styling purposes. 2 total applications. I have done this in the past, here is the API url: [a link](https://github.com/pkim050/nba-list-api). Here is the react app url: [a link](https://github.com/pkim050/nba-list). And here is the demo of the application: [a link](https://www.youtube.com/watch?v=K8eDpUrGatA&feature=youtu.be). It is kind of similar to Matt's Wrestling Cards.
 
 2. Create 1 application that involves both React and Rails 7, including Postgres as database and Bootstrap for styling purposes. 1 total application.
 
@@ -30,6 +30,7 @@ More to come from different branches.
 5. Inputted some seeds to pre-populate the tasks towards our todo list that Roaming Hunger has given us.
 6. Implemented some RSpec testing for model and controller.
 7. Installed Rubocop to ensure there are no bugs/errors, for better codebase.
+8. In order to see if the API is working, I used db:seed file and went to the browser and checked the endpoints of /api/v1/todos, /api/v1/todos/1.
 
 ## To boot up the server
 1. bundle install
@@ -37,3 +38,45 @@ More to come from different branches.
 3. rails db:migrate
 4. rails db:seed (optional)
 5. bin/dev
+
+## Notes
+Whoops, I accidentally opened a PR in the codetest repository instead of my own repository, went ahead and closed it out.
+
+## RHSC-1_todo_front_end
+# First commit
+1. Installed React, React Dom, and React Router Dom packages.
+2. Started up components.
+3. Installed more packages such as fontawesome for to utilize their free icons, uuid, and immutability-helper for post calls on API.
+4. Able to show React elements/componenets in the home page.
+5. Todo Title is rendered.
+6. There is a divider between the list of todos and the title.
+7. All existing todos are showing up along with checkbox, edit icon, and delete icon.
+8. All aligned in the middle, giving out a clean and simple border of each todos.
+9. Created a function Todos to output all existing todos.
+10. Checkboxes do nothing for now.
+
+# Second commit
+1. Added create action form for Todo.
+2. User has both options to either press enter or click the submit button after entering a todo.
+3. Does not hit the database yet, trying to figure that out.
+4. I forced one of the todo to be true on status done via console. Looks like it check marks it along with strikethrough.
+
+# Third commit
+1. Database is now affected when creating todos.
+2. Trash icon works where it would delete the todo including the database when user clicks on it.
+
+# Fourth commit
+1. Edit icon works where user can edit the description of the todo and it gets saved on both front end and back end.
+2. When user hits the checkmark, the todo gets updated in the backend as well saying that the the status of done is true.
+3. Vice versa of #2 when unchecking the checkmark.
+4. Added a neat progress bar of completing todos.
+
+### Notes
+Don't have enough time but I wouldn't mind having this list be sorted specifically where completed todos are hidden from front end when user filters for only non finished todos.
+Implementing front end testings such as lint, etc.
+Instead of deploying this to the internet, maybe I can create my own (second) version of the todo list but not with react, strictly with turbo, stimulus and with tailwind instead of bootstrap on my website. I will probably use an endpoint like: [a link](https://www.patrick.aaron.kim.com/roaming_hunger).
+Overall, I had a great time working on it.
+
+Thank you all for your time and the opportunity.
+
+- Patrick Kim
