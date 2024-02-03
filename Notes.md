@@ -30,6 +30,7 @@ More to come from different branches.
 5. Inputted some seeds to pre-populate the tasks towards our todo list that Roaming Hunger has given us.
 6. Implemented some RSpec testing for model and controller.
 7. Installed Rubocop to ensure there are no bugs/errors, for better codebase.
+8. In order to see if the API is working, I used db:seed file and went to the browser and checked the endpoints of /api/v1/todos, /api/v1/todos/1.
 
 ## To boot up the server
 1. bundle install
@@ -53,3 +54,10 @@ Whoops, I accidentally opened a PR in the codetest repository instead of my own 
 8. All aligned in the middle, giving out a clean and simple border of each todos.
 9. Created a function Todos to output all existing todos.
 10. Checkboxes do nothing for now.
+
+# Second commit
+1. Added create action form for Todo.
+2. User has both options to either press enter or click the submit button after entering a todo.
+3. Does not hit the database yet, trying to figure that out.
+4. I forced one of the todo to be true on status done via console. Looks like it check marks it along with strikethrough.
+

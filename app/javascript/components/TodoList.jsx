@@ -4,6 +4,39 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
+function CreateTodo({ addTodo }) {
+  const [value, setValue] = useState("");
+
+  const handleSubmit = e => {
+    e.preventDefault();
+
+    const url = '/api/v1/todos'
+
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    if (!value) return;
+
+    addTodo(value);
+
+    setValue("");
+  }
+
+  return (
+    <form className="d-flex justify-content-center" onSubmit={handleSubmit}>
+    <input
+      type="text"
+      value={value}
+      placeholder="Add a new todo"
+      maxLength="100"
+      onChange={e => setValue(e.target.value)}
+    />
+    <input type="submit" value="Submit" />
+    </form>
+  );
+};
+
+// Function that shows all todos
+// Includes the checkboxes, edit button, and destroy button
 function Todo({ todo, index }) {
   return (
     <li key={index} className="d-flex justify-content-between list-group-item">
@@ -37,6 +70,10 @@ const Todos = () => {
       .catch(() => navigate("/"));
   }, []);
 
+  const addTodo = todo => {
+    setTodos([...todos, {title: todo, done: false}])
+  };
+
   return (
     <>
       <div className="primary-color d-flex align-items-center justify-content-center">
@@ -44,6 +81,7 @@ const Todos = () => {
           <div className="container secondary-color">
             <h1 className="text-center display-5">Todo List</h1>
             <hr className="my-4" />
+            <CreateTodo addTodo={addTodo} />
 
             <div className="mt-4">
               <ul className="list-group">
