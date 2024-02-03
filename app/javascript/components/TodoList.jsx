@@ -14,6 +14,25 @@ function CreateTodo({ addTodo }) {
 
     const token = document.querySelector('meta[name="csrf-token"]').content;
 
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "X-CSRF-Token": token,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ todo: { title: value, done: false } })
+    })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+        throw new Error("Network response was not ok.");
+      })
+      .then(response => {
+        console.log(response);
+      })
+      .catch(() => console.log('Error trying to add todo.'));
+
     if (!value) return;
 
     addTodo(value);
@@ -37,7 +56,7 @@ function CreateTodo({ addTodo }) {
 
 // Function that shows all todos
 // Includes the checkboxes, edit button, and destroy button
-function Todo({ todo, index }) {
+function Todo({ todo, index, deleteTodo }) {
   return (
     <li key={index} className="d-flex justify-content-between list-group-item">
       <span className="d-flex justify-content-between gap-2">
@@ -46,7 +65,7 @@ function Todo({ todo, index }) {
       </span>
       <span className="d-flex justify-content-between gap-2">
         <FontAwesomeIcon className="d-flex justify-content-end" icon={faPenToSquare} />
-        <FontAwesomeIcon className="d-flex justify-content-end" icon={faTrash} />
+        <FontAwesomeIcon className="d-flex justify-content-end" icon={faTrash} onClick={() => deleteTodo(todo.id)} />
       </span>
     </li>
   );
@@ -55,7 +74,6 @@ function Todo({ todo, index }) {
 const Todos = () => {
   const navigate = useNavigate();
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState('');
 
   useEffect(() => {
     const url = "/api/v1/todos";
@@ -70,8 +88,30 @@ const Todos = () => {
       .catch(() => navigate("/"));
   }, []);
 
+  // Adding Todo
   const addTodo = todo => {
     setTodos([...todos, {title: todo, done: false}])
+  };
+
+  // Deleting Todo
+  const deleteTodo = id => {
+    const updatedTodos = todos.filter((todo) => todo.id !== id);
+
+    const url = `/api/v1/todos/${id}`
+
+    const token = document.querySelector('meta[name="csrf-token"]').content;
+
+    fetch(url, {
+      method: "DELETE",
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-Token': token,
+      },
+    })
+      .then(() => {
+        const updatedTodos = todos.filter(todo => todo.id !== id);
+        setTodos(updatedTodos);
+    });
   };
 
   return (
@@ -86,7 +126,7 @@ const Todos = () => {
             <div className="mt-4">
               <ul className="list-group">
                 {todos.map((todo, index) => (
-                  <Todo todo={todo} key={index} />
+                  <Todo todo={todo} key={index} deleteTodo={deleteTodo} />
                 ))}
               </ul>
             </div>

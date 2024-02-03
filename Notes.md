@@ -61,3 +61,7 @@ Whoops, I accidentally opened a PR in the codetest repository instead of my own 
 3. Does not hit the database yet, trying to figure that out.
 4. I forced one of the todo to be true on status done via console. Looks like it check marks it along with strikethrough.
 
+# Third commit
+1. Database is now affected when creating todos.
+2. Trash icon works where it would delete the todo including the database when user clicks on it.
+

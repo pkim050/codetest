@@ -27,8 +27,8 @@ Create an application to create, view, update, and destroy ‘todo’ items. The
 * [ ] A checkbox to mark the todo as done or undone
 
 ### Interactions
-* [ ] The user should be able to create a new TODO item
-* [ ] The user should be able to destroy a TODO item
+* [X] The user should be able to create a new TODO item
+* [X] The user should be able to destroy a TODO item
 * [ ] The user should be able to update the text description of a TODO item
 
 ## Backend Requirements
